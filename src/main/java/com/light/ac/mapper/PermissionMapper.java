@@ -7,19 +7,20 @@ import tk.mybatis.mapper.common.Mapper;
 
 import com.light.ac.domain.Permission;
 
-public interface PermissionMapper extends Mapper<Permission>{
+public interface PermissionMapper extends Mapper<Permission> {
 
-	/**
-	 * 通过 用户ID 获取其对应的权限
-	 * @param userId
-	 * @return
-	 */
-	List<Permission> getPermissionList(Integer userId);
+    /**
+     * 通过 用户ID 获取其对应的权限
+     *
+     * @param userId
+     * @return
+     */
+    List<Permission> getPermissionList(Integer userId);
 
-	int getChildrenCount(Serializable id);
+    int getChildrenCount(Serializable id);
 
-	List<Permission> getPermissionWithoutButton();
+    List<Permission> getPermissionWithoutButton();
 
-	List<Permission> getPermissionListByRoleId(int roleId);
+    List<Permission> getPermissionListByRoleId(int roleId);
 
 }

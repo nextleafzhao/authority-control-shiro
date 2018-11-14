@@ -11,38 +11,38 @@ import com.light.ac.service.BaseService;
 
 public abstract class BaseServiceImpl<T> implements BaseService<T> {
 
-	protected abstract Mapper<T> getMapper();
-	
-	@Override
-	public void save(T t) {
-		getMapper().insert(t);
-	}
+    protected abstract Mapper<T> getMapper();
 
-	@Override
-	public void update(T t) {
-		getMapper().updateByPrimaryKeySelective(t);
-	}
+    @Override
+    public void save(T t) {
+        getMapper().insert(t);
+    }
 
-	@Override
-	public void deleteById(Serializable id) {
-		getMapper().deleteByPrimaryKey(id);
-	}
+    @Override
+    public void update(T t) {
+        getMapper().updateByPrimaryKeySelective(t);
+    }
 
-	@Override
-	public T getById(Serializable id) {
-		return getMapper().selectByPrimaryKey(id);
-	}
+    @Override
+    public void deleteById(Serializable id) {
+        getMapper().deleteByPrimaryKey(id);
+    }
 
-	@Override
-	public List<T> getList() {
-		return getMapper().selectAll();
-	}
+    @Override
+    public T getById(Serializable id) {
+        return getMapper().selectByPrimaryKey(id);
+    }
 
-	@Override
-	public PageInfo<T> getListByPage(int currentNum, int pageSize) {
-		PageHelper.startPage(currentNum, pageSize);
-		List<T> list = this.getList();
-		return new PageInfo<T>(list);
-	}
+    @Override
+    public List<T> getList() {
+        return getMapper().selectAll();
+    }
+
+    @Override
+    public PageInfo<T> getListByPage(int currentNum, int pageSize) {
+        PageHelper.startPage(currentNum, pageSize);
+        List<T> list = this.getList();
+        return new PageInfo<T>(list);
+    }
 
 }

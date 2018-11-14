@@ -9,14 +9,14 @@ import tk.mybatis.mapper.common.Mapper;
 
 import com.light.ac.domain.User;
 
-public interface UserMapper extends Mapper<User>{
+public interface UserMapper extends Mapper<User> {
 
-	User getUserByUserName(String userName);
+    User getUserByUserName(String userName);
 
-	void deleteBatchByIds(@Param("ids") String[] idsStr);
+    void deleteBatchByIds(@Param("ids") String[] idsStr);
 
-	void deleteUserRoleByUserId(int userId);
+    void deleteUserRoleByUserId(int userId);
 
-	void saveUserRole(@Param("list") List<Map<String, Integer>> params);
+    void saveUserRole(@Param("list") List<Map<String, Integer>> params);
 
 }

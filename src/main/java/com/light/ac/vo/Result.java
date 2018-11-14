@@ -13,7 +13,7 @@ public class Result {
     private Object obj;
 
     public Result(int code, String msg) {
-        this(code,msg,null);
+        this(code, msg, null);
     }
 
     public Result(int code, String msg, Object obj) {
@@ -23,23 +23,23 @@ public class Result {
     }
 
     public static Result succeed() {
-        return new Result(200,SUCCESS);
+        return new Result(200, SUCCESS);
     }
 
     public static Result succeed(Object obj) {
-        return new Result(200,SUCCESS,obj);
+        return new Result(200, SUCCESS, obj);
     }
 
     public static Result succeed(String msg, Object obj) {
-        return new Result(200,msg,obj);
+        return new Result(200, msg, obj);
     }
 
     public static Result fail() {
-        return new Result(500,FAILURE);
+        return new Result(500, FAILURE);
     }
 
     public static Result fail(int code, String msg) {
-        return new Result(code,msg);
+        return new Result(code, msg);
     }
 
     public int getCode() {

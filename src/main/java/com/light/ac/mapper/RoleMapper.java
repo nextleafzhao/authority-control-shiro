@@ -9,14 +9,14 @@ import tk.mybatis.mapper.common.Mapper;
 
 import com.light.ac.domain.Role;
 
-public interface RoleMapper extends Mapper<Role>{
+public interface RoleMapper extends Mapper<Role> {
 
-	void deleteRolePermissionByRoleId(int roleId);
+    void deleteRolePermissionByRoleId(int roleId);
 
-	void saveRolePermission(@Param("list")List<Map<String, Integer>> params);
+    void saveRolePermission(@Param("list") List<Map<String, Integer>> params);
 
-	List<Role> getRoleListByUserId(int userId);
+    List<Role> getRoleListByUserId(int userId);
 
-	void deleteBatchByIds(@Param("ids")String[] idsStr);
+    void deleteBatchByIds(@Param("ids") String[] idsStr);
 
 }
